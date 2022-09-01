@@ -394,7 +394,7 @@ str_view_all(Str_Teste_4, "^a")
 
 ## Exemplo 3
 
-Neste exemplo, usaremos novamente a tabela **frutas**, criada quando descrevemos a função [str_c]().
+Neste exemplo, usaremos novamente a tabela **frutas**.
 
 Digamos que queremos filtrar apenas as frutas que **terminem** com a letra "**a**" **E** também que terminem com a letra "**o**". Podemos fazer:
 
