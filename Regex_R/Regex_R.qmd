@@ -2,6 +2,7 @@
 title: "Expressões Regulares (Regex) no R"
 author: "Eric Scopinho"
 lang: pt
+output-file: index.html
 logo: images/tidyverse-hex-stiker.jpg
 footer: "Expressões Regulares (Regex) no R"
 df-print: paged
