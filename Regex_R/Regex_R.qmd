@@ -4,7 +4,6 @@ author: "Eric Scopinho"
 lang: pt
 logo: images/tidyverse-hex-stiker.jpg
 footer: "Expressões Regulares (Regex) no R"
-toc: true
 df-print: paged
 chalkboard: true
 editor: visual
@@ -18,7 +17,7 @@ format:
 #    number-sections: true
     smaller: true
     scrollable: true
-    theme: default
+    theme: beige
 #  pptx:
 #    reference-doc: template.pptx
 ---
