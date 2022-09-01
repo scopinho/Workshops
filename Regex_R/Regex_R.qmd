@@ -359,3 +359,178 @@ Podemos usar a função **filter**() passando o resultado da função **str_dete
 frutas |> 
   filter (str_detect(name, "[^[:alnum:]]")) 
 ```
+
+## Ancoragem
+
+Para definir se a sequência do padrão de busca está no início ou fim da string, utilizamos as expressões de ancoragem:
+
+| Regex  | Busca            |
+|--------|------------------|
+| **\^** | Início da string |
+| **\$** | Fim da string    |
+
+Para os exemplos a seguir utilizaremos a seguinte string de teste: Str_Teste_4 = "aaa"
+
+```{r}
+Str_Teste_4 <- "aaa"
+Str_Teste_4
+```
+
+## Exemplo 1
+
+Para criar um padrão que busque a letra "a" apenas no **fim** da string, usamos:
+
+```{r}
+str_view_all(Str_Teste_4, "a$")
+```
+
+## Exemplo 2
+
+Para criar um padrão que busque a letra "a" apenas no **início** da string, usamos:
+
+```{r}
+str_view_all(Str_Teste_4, "^a")
+```
+
+## Exemplo 3
+
+Neste exemplo, usaremos novamente a tabela **frutas**, criada quando descrevemos a função [str_c]().
+
+Digamos que queremos filtrar apenas as frutas que **terminem** com a letra "**a**" **E** também que terminem com a letra "**o**". Podemos fazer:
+
+```{r}
+frutas |> 
+  filter (str_detect(name, "[ao]$")) 
+```
+
+## Grupos
+
+Você pode utilizar **parênteses** **(** **)** para definir expressões de **precedência** ou para serem **referenciados** posteriormente através da **ordem de criação**.
+
+Para os exemplos a seguir utilizaremos a seguinte string de teste: Str_Teste_5 = "abbaab"
+
+```{r}
+Str_Teste_5 <- "abbaab"
+Str_Teste_5
+```
+
+## Exemplo 1
+
+Digamos que tenhamos a string "Blueberry" e você queira criar um padrão que busque pela letra "e" precedida das letras "lu" OU "b".
+
+Neste caso, devemos criar um grupo de precedência para "lu" OU "b". Para isto iremos colocar esta parte da expressão entre parênteses (lu\|b). agora podemos utilzar este grupo e concluir o padrão de busca conforme a seguir:
+
+```{r}
+str_view_all("Blueberry", "(lu|b)e")
+```
+
+Veja que se nossa string fosse "Blueberry is special", a letra "e" de "special" não seria encontrada:
+
+```{r}
+str_view_all("Blueberry is special", "(lu|b)e")
+```
+
+Se quisermos criar um padrão que encontre a letra "e" precedida de qualquer letra, podemos fazer:
+
+```{r}
+str_view_all("Blueberry is special", "([:alpha:])e")
+```
+
+## Exemplo 2
+
+Ao criar um grupo, como vimos no exemplo anterior, podemos fazer referência à este grupo usando **\\\\*n*,** on ***n*** é a ordem de criação do grupo.
+
+Digamos que criamos um grupo utilizando os parênteses ( ) que contenha apenas letra "a". 
+Seu código ficaria **(a)**, e ele poderia ser referenciado com \\**\\1**, pois foi o primeiro grupo a ser criado.
+
+Digamos que agora, você crie um segundo grupo com a letra "b", seu código ficaria **(b)** e poderia ser referenciado com **\\\\2**.
+
+Sabendo como criar os grupos e como referênciá-los, podemos montar um padrão de busca utilizando tanto os grupos quanto suas referência. Veja este exemplo:
+
+```{r}
+str_view_all(Str_Teste_5, "(a)(b)\\2\\1")
+```
+
+Neste exemplo, nosso padrão busca por "ba", atraveś de \\\\2\\\\1, desde que tenham precedência de "ab", através dos grupos (a)(b).
+
+## Exemplo 3
+
+Digamos que tenhamos a string "**Tem uma banana na mesa**". Queremos criar uma padrão que busque as letras "**nana**". Apesar de termos soluções mais simples, poderíamos criar um grupo contendo "na" e usar a ordem de referência para concluir a expressão:
+
+```{r}
+str_view_all("Tem uma banana na mesa", "(na)\\1")
+```
+
+## Exemplo 4
+
+Neste exemplo, usaremos novamente a tabela **frutas**.
+
+Aqui iremos obter o mesmo resultado para o Problema 4 descrito na seção [Quantificadores].
+
+Porém agora vamos usar a função **str_replace**() e o suporte à **grupos** que acabamos de ver para atingir o mesmo resultado, ou seja, extrair apenas os números da coluna nova_string.
+
+```{r}
+frutas |> 
+  mutate (numeros = str_replace(nova_string, ".+([0-9]).?([0-9]).+", "\\1\\2")) 
+```
+
+## Detalhes do exemplo
+
+Observe que a função **str_replace**(), recebe dois padrões, sendo o primeiro de busca e o segundo daquilo que iremos substituir o primeiro.
+
+Neste caso, nosso padrão de busca, encontra "qualquer caractere" "uma ou mais vezes", depois cria um "grupo com números de 0 a 9", seguido por "qualquer caractere zero ou uma vez" e depois cria o segundo "grupo com números de 0 à 9" e conclui com "qualquer caractere uma ou mais vezes".
+
+Com nosso padrão de busca criado, iremos criar nosso padrão de substituição, ou seja, aquilo que for encontrado pelo padrão de busca, será substituído pelo padrão de substituição.
+
+Nosso padrão de substituição ficou simples ("\\\\1\\\\2"). Veja que ele apenas pega o conteúdo do grupo 1 e grupo 2 criados no padrão de busca usando parênteses para substituir.
+
+## Pesquisa ao Redor
+
+Em alguns casos, precisamos criar um padrão que **olhe ao redor** para encontrar o que buscamos.
+
+Há símbolos para definirmos grupos que estão **precedendo** o que buscamos e há símbolos para definirmos grupos que estão **posteriores** ao que buscamos. Há também símbolos para negar os casos anteriores e posteriores. Veja:
+
+| Regex       | Busca             |
+|-------------|-------------------|
+| (**?=** )   | Seguido por       |
+| (**?!** )   | Não seguido por   |
+| (**?\<=** ) | Precedido por     |
+| (**?\<!** ) | Não precedido por |
+
+Para os exemplos a seguir utilizaremos a seguinte string de teste: Str_Teste_6 = "bacad"
+
+```{r}
+Str_Teste_6 <- "bacad"
+Str_Teste_6
+```
+
+## Exemplo 1
+
+Vamos criar um padrão de busca que localize a letra "a", mas queremos a(s) letra(s) "a" que são seguidas apenas pela letra "c".
+
+Para isso iremos criar um grupo ("c"), mas como é um grupo que irá seguir aquilo que buscamos, ao invés dos parêntese apenas, iremos utilizar o símbolo da tabela anterior "?="a fazer (?=c). Depois adicionamos a busca pela letra "a".
+
+```{r}
+str_view_all(Str_Teste_6, "a(?=c)")
+```
+
+## Exemplo 2
+
+Vamos criar um padrão de busca que localize a letra "a", mas queremos a(s) letra(s) "a" que são precedidas pela letra "b". Usando a mesma tabela e raciocínio do exemplo anterior, podemos criar o grupo com a letra b, mas como é um grupo de precedência, temos que adicionar os símbolos "?\<=" e fazer:
+
+```{r}
+str_view_all(Str_Teste_6, "(?<=b)a")
+```
+
+## Exemplo 3
+
+Neste exemplo, usaremos novamente a tabela **frutas**.
+
+Digamos que iremos filter as frutas que comecem com as letras "B" e "P" se forem seguidas das letras "e" e "l". Desta forma, não teremos na saída frutas como "Banana" ou "Pineapple"
+
+```{r}
+frutas |> 
+  filter(str_detect(name, "^[BP](?=[el])")) 
+```
+
+## MUITO OBRIGADO!!! 
