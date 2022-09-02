@@ -391,7 +391,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" data-background-image="images/bg.png" class="center">
   <h1 class="title">Expressões Regulares (Regex) no R</h1>
   <p class="author">Eric Scopinho</p>
 </section>
@@ -527,8 +527,8 @@
 <p>Vamos mostrar como usar a tabela abaixo com alguns exemplos. Para isso, iremos usar a string criada anteriormente chamada “Str_Teste”.</p>
 <table>
 <colgroup>
-<col style="width: 38%">
-<col style="width: 61%">
+<col style="width: 31%">
+<col style="width: 68%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -648,8 +648,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">str_view_all</span> (Str_Teste, <span class="st">"a"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-34d425a41ea7440999e9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-34d425a41ea7440999e9">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>bc ABC 123\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e1ba9de52974a2d736b3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e1ba9de52974a2d736b3">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>bc ABC 123\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -659,8 +659,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">str_view_all</span> (Str_Teste, <span class="st">"</span><span class="sc">\\</span><span class="st">?"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-08f3a80d11d346ff693c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-08f3a80d11d346ff693c">{"x":{"html":"<ul>\n  <li>abc ABC 123\t.!<span class='match'>?<\/span>\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-25fb3d6e0cc9845512de" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-25fb3d6e0cc9845512de">{"x":{"html":"<ul>\n  <li>abc ABC 123\t.!<span class='match'>?<\/span>\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -670,8 +670,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">str_view_all</span> (Str_Teste, <span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-b253b9c158cf83df3cb2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b253b9c158cf83df3cb2">{"x":{"html":"<ul>\n  <li>abc ABC <span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span>\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fe63da9f41665659b31b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fe63da9f41665659b31b">{"x":{"html":"<ul>\n  <li>abc ABC <span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span>\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="callout callout-tip callout-captioned callout-style-default">
@@ -690,8 +690,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">str_view_all</span> (Str_Teste, <span class="st">"</span><span class="sc">\\</span><span class="st">D"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-54a104df1a70c4bdd9dc" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-54a104df1a70c4bdd9dc">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span><span class='match'> <\/span><span class='match'>A<\/span><span class='match'>B<\/span><span class='match'>C<\/span><span class='match'> <\/span>123<span class='match'>\t<\/span><span class='match'>.<\/span><span class='match'>!<\/span><span class='match'>?<\/span><span class='match'>\\<\/span><span class='match'>(<\/span><span class='match'>)<\/span><span class='match'>{<\/span><span class='match'>}<\/span><span class='match'>\n<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cf2d8103cb139e2ee53b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cf2d8103cb139e2ee53b">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span><span class='match'> <\/span><span class='match'>A<\/span><span class='match'>B<\/span><span class='match'>C<\/span><span class='match'> <\/span>123<span class='match'>\t<\/span><span class='match'>.<\/span><span class='match'>!<\/span><span class='match'>?<\/span><span class='match'>\\<\/span><span class='match'>(<\/span><span class='match'>)<\/span><span class='match'>{<\/span><span class='match'>}<\/span><span class='match'>\n<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -701,8 +701,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">str_view_all</span> (Str_Teste, <span class="st">"[:alnum:]"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-e3614798b944a8aa2122" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e3614798b944a8aa2122">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span> <span class='match'>A<\/span><span class='match'>B<\/span><span class='match'>C<\/span> <span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span>\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cb60656d8c1ea311d35f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb60656d8c1ea311d35f">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span> <span class='match'>A<\/span><span class='match'>B<\/span><span class='match'>C<\/span> <span class='match'>1<\/span><span class='match'>2<\/span><span class='match'>3<\/span>\t.!?\\(){}\n<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -778,8 +778,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">str_view_all</span>(Str_Teste_2, <span class="st">"a?"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-5cd0b32d3a28316a6562" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5cd0b32d3a28316a6562">{"x":{"html":"<ul>\n  <li><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'>a<\/span><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'>a<\/span><span class='match'>a<\/span><span class='match'><\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2caee353be7fc688437a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2caee353be7fc688437a">{"x":{"html":"<ul>\n  <li><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'>a<\/span><span class='match'><\/span>.<span class='match'>a<\/span><span class='match'>a<\/span><span class='match'>a<\/span><span class='match'><\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Neste caso, todas as vezes que a funções encontrar a letra “a” zero ou uma vez, elá irá marcar.</p>
@@ -787,8 +787,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">str_view</span>(Str_Teste_2, <span class="st">"a?"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-6d20bf9f0c86050ee967" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d20bf9f0c86050ee967">{"x":{"html":"<ul>\n  <li><span class='match'><\/span>.a.aa.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-59bf2324e35821d6f83b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-59bf2324e35821d6f83b">{"x":{"html":"<ul>\n  <li><span class='match'><\/span>.a.aa.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Observe que a busca para logo no primeiro caractere, pois estamos buscando pela letra “a” <strong>ZERO</strong> ou mais vezes.</p>
@@ -799,8 +799,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">str_view</span>(Str_Teste_2, <span class="st">"a+"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-24fbd793cbaf2556e73a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-24fbd793cbaf2556e73a">{"x":{"html":"<ul>\n  <li>.<span class='match'>a<\/span>.aa.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b2ca89986eae479d10ff" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b2ca89986eae479d10ff">{"x":{"html":"<ul>\n  <li>.<span class='match'>a<\/span>.aa.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -810,16 +810,16 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">str_view</span>(Str_Teste_2, <span class="st">"a{2,3}"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-d5747138813dbfd825c5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d5747138813dbfd825c5">{"x":{"html":"<ul>\n  <li>.a.<span class='match'>aa<\/span>.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cc0aca92830af1dfd1ca" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cc0aca92830af1dfd1ca">{"x":{"html":"<ul>\n  <li>.a.<span class='match'>aa<\/span>.aaa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Veja que ele localizou apenas as duas letras “aa” e não marcou as letras “aaa”. Isto é porque utilizamos a função str_view(), que parou a busca assim que a primeiro encontro ocorreu. Se quisermos continuar a busca, devemos utilizar a função <strong>str_view_all</strong>().</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">str_view_all</span>(Str_Teste_2, <span class="st">"a{2,3}"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-4c014791a3e6fe5f651b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4c014791a3e6fe5f651b">{"x":{"html":"<ul>\n  <li>.a.<span class='match'>aa<\/span>.<span class='match'>aaa<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0cfa25e33821cab8c194" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0cfa25e33821cab8c194">{"x":{"html":"<ul>\n  <li>.a.<span class='match'>aa<\/span>.<span class='match'>aaa<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -905,8 +905,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">str_view_all</span>(Str_Teste_3, <span class="st">"ab|d"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-8edc7b50c390e30cf8f9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8edc7b50c390e30cf8f9">{"x":{"html":"<ul>\n  <li><span class='match'>ab<\/span>c<span class='match'>d<\/span>e<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-baf0d516e9b89028265b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-baf0d516e9b89028265b">{"x":{"html":"<ul>\n  <li><span class='match'>ab<\/span>c<span class='match'>d<\/span>e<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -916,8 +916,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">str_view_all</span>(Str_Teste_3, <span class="st">"[abe]"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-0fdea6cfff0175a10d77" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0fdea6cfff0175a10d77">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span>cd<span class='match'>e<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8c566c250afb3761ff70" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c566c250afb3761ff70">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span>cd<span class='match'>e<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -927,8 +927,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">str_view_all</span>(Str_Teste_3, <span class="st">"[a-c]"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-6d08a7b141e25084f0b2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d08a7b141e25084f0b2">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span>de<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-aace7c9851f6d25c74b5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aace7c9851f6d25c74b5">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span><span class='match'>b<\/span><span class='match'>c<\/span>de<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -986,8 +986,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">str_view_all</span>(Str_Teste_4, <span class="st">"a$"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-198ba9887eb0dccb9a56" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-198ba9887eb0dccb9a56">{"x":{"html":"<ul>\n  <li>aa<span class='match'>a<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-87a83feb56c3620ba438" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87a83feb56c3620ba438">{"x":{"html":"<ul>\n  <li>aa<span class='match'>a<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -997,8 +997,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">str_view_all</span>(Str_Teste_4, <span class="st">"^a"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-1500cfca220a440398ba" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1500cfca220a440398ba">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>aa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8aa88436011a8a831cd8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8aa88436011a8a831cd8">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>aa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1038,24 +1038,24 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">str_view_all</span>(<span class="st">"Blueberry"</span>, <span class="st">"(lu|b)e"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-18f9761b6267dcb6f1c7" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-18f9761b6267dcb6f1c7">{"x":{"html":"<ul>\n  <li>B<span class='match'>lue<\/span><span class='match'>be<\/span>rry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4934a771f203e6034451" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4934a771f203e6034451">{"x":{"html":"<ul>\n  <li>B<span class='match'>lue<\/span><span class='match'>be<\/span>rry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Veja que se nossa string fosse “Blueberry is special”, a letra “e” de “special” não seria encontrada:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">str_view_all</span>(<span class="st">"Blueberry is special"</span>, <span class="st">"(lu|b)e"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-6ab2b6c8b426c16f5bb1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6ab2b6c8b426c16f5bb1">{"x":{"html":"<ul>\n  <li>B<span class='match'>lue<\/span><span class='match'>be<\/span>rry is special<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ab8c2a3a9ffdf32d7bdf" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ab8c2a3a9ffdf32d7bdf">{"x":{"html":"<ul>\n  <li>B<span class='match'>lue<\/span><span class='match'>be<\/span>rry is special<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Se quisermos criar um padrão que encontre a letra “e” precedida de qualquer letra, podemos fazer:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">str_view_all</span>(<span class="st">"Blueberry is special"</span>, <span class="st">"([:alpha:])e"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-d7626b1e8eedd2597317" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d7626b1e8eedd2597317">{"x":{"html":"<ul>\n  <li>Bl<span class='match'>ue<\/span><span class='match'>be<\/span>rry is s<span class='match'>pe<\/span>cial<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-51bbf8e7bfe8db7cf460" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-51bbf8e7bfe8db7cf460">{"x":{"html":"<ul>\n  <li>Bl<span class='match'>ue<\/span><span class='match'>be<\/span>rry is s<span class='match'>pe<\/span>cial<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1068,8 +1068,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">str_view_all</span>(Str_Teste_5, <span class="st">"(a)(b)</span><span class="sc">\\</span><span class="st">2</span><span class="sc">\\</span><span class="st">1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-9761ca1176f2504a5ff2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9761ca1176f2504a5ff2">{"x":{"html":"<ul>\n  <li><span class='match'>abba<\/span>ab<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-546eaadc2e24739c3003" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-546eaadc2e24739c3003">{"x":{"html":"<ul>\n  <li><span class='match'>abba<\/span>ab<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Neste exemplo, nosso padrão busca por “ba”, atraveś de \\2\\1, desde que tenham precedência de “ab”, através dos grupos (a)(b).</p>
@@ -1080,8 +1080,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">str_view_all</span>(<span class="st">"Tem uma banana na mesa"</span>, <span class="st">"(na)</span><span class="sc">\\</span><span class="st">1"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-57cf1c7d5b3f677c8f38" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-57cf1c7d5b3f677c8f38">{"x":{"html":"<ul>\n  <li>Tem uma ba<span class='match'>nana<\/span> na mesa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9aff396161b706c25fa8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9aff396161b706c25fa8">{"x":{"html":"<ul>\n  <li>Tem uma ba<span class='match'>nana<\/span> na mesa<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1156,8 +1156,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">str_view_all</span>(Str_Teste_6, <span class="st">"a(?=c)"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-d29fe46e00c380107f2d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d29fe46e00c380107f2d">{"x":{"html":"<ul>\n  <li>b<span class='match'>a<\/span>cad<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fee8dd7c923db0eba304" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fee8dd7c923db0eba304">{"x":{"html":"<ul>\n  <li>b<span class='match'>a<\/span>cad<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1167,8 +1167,8 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">str_view_all</span>(Str_Teste_6, <span class="st">"(?&lt;=b)a"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-13b0cd15a376f0e7f051" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-13b0cd15a376f0e7f051">{"x":{"html":"<ul>\n  <li>b<span class='match'>a<\/span>cad<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8d97032797d4528d3c0e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8d97032797d4528d3c0e">{"x":{"html":"<ul>\n  <li>b<span class='match'>a<\/span>cad<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1189,8 +1189,32 @@
 </div>
 </div>
 </section>
-<section id="muito-obrigado" class="slide level2">
-<h2>MUITO OBRIGADO!!!</h2>
+<section id="section" class="slide level2" data-background-color="black">
+<h2></h2>
+<table style="width:99%;">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 68%">
+<col style="width: 15%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;"><h2 id="muito-obrigado"><strong>MUITO OBRIGADO!!!</strong></h2></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <img src="images/tidyverse-hex-stiker.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Expressões Regulares (Regex) no R</p>

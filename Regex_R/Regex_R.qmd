@@ -18,7 +18,14 @@ format:
 #    number-sections: true
     smaller: true
     scrollable: true
-    theme: beige
+#    parallax-background-image: "images/bg2.png"
+#    parallax-background-size: "contain"
+#    background-repeat: "no-repeat"
+#    backgrond-size: "cover"
+#    background-image: "images/bg2.png"
+    theme: [default, custom.css]
+    title-slide-attributes: 
+      data-background-image: images/bg.png
 #  pptx:
 #    reference-doc: template.pptx
 ---
@@ -109,33 +116,59 @@ Str_Teste
 
 Vamos mostrar como usar a tabela abaixo com alguns exemplos. Para isso, iremos usar a string criada anteriormente chamada "Str_Teste".
 
-| String Regex no R | Busca por                                               |
-|----------------------------|--------------------------------------------|
-| a                 | a (etc.)                                                |
-| \\\\.             | .                                                       |
-| \\\\!             | \\!                                                     |
-| \\\\?             | \\?                                                     |
-| \\\\\\\\          | \\\\                                                    |
-| \\\\(             | \\(                                                     |
-| \\\\)             | \\)                                                     |
-| \\\\{             | \\{                                                     |
-| \\\\}             | \\}                                                     |
-| \\\\n             | nova linha (ENTER)                                      |
-| \\\\t             | TAB                                                     |
-| \\\\s             | qualquer caractere em branco                            |
-| \\\\d             | qualquer digito                                         |
-| \\\\w             | qualquer letra                                          |
-| \\\\b             | barra de espaço                                         |
-| \[:digit:\]       | digitos                                                 |
-| \[:alpha:\]       | letras                                                  |
-| \[:lower:\]       | letras minúsculas                                       |
-| \[:upper:\]       | letras maiúsculas                                       |
-| \[:alnum:\]       | letras e números                                        |
-| \[:punct:\]       | pontuação                                               |
-| \[:graph:\]       | letras, números e pontuação                             |
-| \[:space:\]       | qualquer espaço em branco                               |
-| \[:blank:\]       | espaço em branco e barra de espaço (mas não nova linha) |
-| .                 | qualquer caractere exceto nova linha (ENTER)            |
++--------------------------+---------------------------------------------------------+
+| String Regex no R        | Busca por                                               |
++==========================+=========================================================+
+| a                        | a (etc.)                                                |
++--------------------------+---------------------------------------------------------+
+| \\\\.                    | .                                                       |
++--------------------------+---------------------------------------------------------+
+| \\\\!                    | \\!                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\?                    | \\?                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\\\\\                 | \\\\                                                    |
++--------------------------+---------------------------------------------------------+
+| \\\\(                    | \\(                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\)                    | \\)                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\{                    | \\{                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\}                    | \\}                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\n                    | nova linha (ENTER)                                      |
++--------------------------+---------------------------------------------------------+
+| \\\\t                    | TAB                                                     |
++--------------------------+---------------------------------------------------------+
+| \\\\s                    | qualquer caractere em branco                            |
++--------------------------+---------------------------------------------------------+
+| \\\\d                    | qualquer digito                                         |
++--------------------------+---------------------------------------------------------+
+| \\\\w                    | qualquer letra                                          |
++--------------------------+---------------------------------------------------------+
+| \\\\b                    | barra de espaço                                         |
++--------------------------+---------------------------------------------------------+
+| \[:digit:\]              | digitos                                                 |
++--------------------------+---------------------------------------------------------+
+| \[:alpha:\]              | letras                                                  |
++--------------------------+---------------------------------------------------------+
+| \[:lower:\]              | letras minúsculas                                       |
++--------------------------+---------------------------------------------------------+
+| \[:upper:\]              | letras maiúsculas                                       |
++--------------------------+---------------------------------------------------------+
+| \[:alnum:\]              | letras e números                                        |
++--------------------------+---------------------------------------------------------+
+| \[:punct:\]              | pontuação                                               |
++--------------------------+---------------------------------------------------------+
+| \[:graph:\]              | letras, números e pontuação                             |
++--------------------------+---------------------------------------------------------+
+| \[:space:\]              | qualquer espaço em branco                               |
++--------------------------+---------------------------------------------------------+
+| \[:blank:\]              | espaço em branco e barra de espaço (mas não nova linha) |
++--------------------------+---------------------------------------------------------+
+| .                        | qualquer caractere exceto nova linha (ENTER)            |
++--------------------------+---------------------------------------------------------+
 
 ## Exemplo 1
 
@@ -441,8 +474,7 @@ str_view_all("Blueberry is special", "([:alpha:])e")
 
 Ao criar um grupo, como vimos no exemplo anterior, podemos fazer referência à este grupo usando **\\\\*n*,** on ***n*** é a ordem de criação do grupo.
 
-Digamos que criamos um grupo utilizando os parênteses ( ) que contenha apenas letra "a". 
-Seu código ficaria **(a)**, e ele poderia ser referenciado com \\**\\1**, pois foi o primeiro grupo a ser criado.
+Digamos que criamos um grupo utilizando os parênteses ( ) que contenha apenas letra "a". Seu código ficaria **(a)**, e ele poderia ser referenciado com \\**\\1**, pois foi o primeiro grupo a ser criado.
 
 Digamos que agora, você crie um segundo grupo com a letra "b", seu código ficaria **(b)** e poderia ser referenciado com **\\\\2**.
 
@@ -534,4 +566,12 @@ frutas |>
   filter(str_detect(name, "^[BP](?=[el])")) 
 ```
 
-## MUITO OBRIGADO!!! 
+##  {background-color="black"}
+
++----------+:----------------------------------------------:+----------+
+|          |                                                |          |
++----------+------------------------------------------------+----------+
+|          | ## **MUITO OBRIGADO!!!**                       |          |
++----------+------------------------------------------------+----------+
+|          |                                                |          |
++----------+------------------------------------------------+----------+
